@@ -18,24 +18,26 @@ A2A 1.0 agent that exposes a JSONRPC interface.
 ## Install
 
 ```sh
+git clone https://github.com/atostivint/opencode-a2a.git
 cd opencode-a2a
 bun install
 bun run typecheck
 bun test
 ```
 
-Add the plugin to `~/.config/opencode/opencode.json`:
+Add the plugin to `~/.config/opencode/opencode.json`. Point `package` at the
+cloned directory (absolute path):
 
 ```json
 {
   "plugins": [
     {
-      "package": "C:/Users/elekt/Projets/opencode-a2a",
+      "package": "/absolute/path/to/opencode-a2a",
       "options": {
         "defaultAgent": "iris",
         "agents": {
           "iris": {
-            "url": "http://100.119.105.2:9900/",
+            "url": "http://agent.example.com/",
             "token": "{file:~/.config/opencode/secrets/iris-a2a-token}"
           }
         }
@@ -45,11 +47,14 @@ Add the plugin to `~/.config/opencode/opencode.json`:
 }
 ```
 
+On Windows, use forward slashes, for example
+`"C:/Users/you/Projets/opencode-a2a"`.
+
 The token can also come from an environment variable:
 
 ```json
 {
-  "url": "http://100.119.105.2:9900/",
+  "url": "http://agent.example.com/",
   "token": "{env:IRIS_A2A_TOKEN}"
 }
 ```

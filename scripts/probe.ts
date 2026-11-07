@@ -1,6 +1,6 @@
 import { A2AClient, A2AError } from "../src/a2a.js"
 
-const url = process.env.A2A_URL ?? "http://100.119.105.2:9900/"
+const url = process.env.A2A_URL ?? "http://127.0.0.1:9900/"
 const token = process.env.IRIS_A2A_TOKEN
 const client = new A2AClient({
   baseURL: url,
